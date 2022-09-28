@@ -6,9 +6,13 @@ class Node {
 }
 
 class LinkedList {
-    constructor() {
+    constructor(...arr) {
         this.head = new Node();
+        for (let i of arr)
+            this.append(i)
+        
     }
+  
     append(val) {
         let node = new Node(val);
         if (this.head.value == null) {
@@ -139,11 +143,6 @@ class LinkedList {
     
 }
 
-let list = new LinkedList();
-list.append(2);
-list.append(3);
-list.prepend(1);
-list.append(111);
-list.removeAt(-7)
+let list = new LinkedList(1,2,3,4,5);
 console.log(list.toString())
 
